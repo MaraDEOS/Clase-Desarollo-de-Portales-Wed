@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import path, { resolve } from 'node:path';
 import * as glob from "glob";
+import handlebars from 'vite-plugin-handlebars';
 
 const __dirname = import.meta.dirname;
 
@@ -33,5 +34,10 @@ export default defineConfig(
                 input: obtenerHtmlFiles()
             }
         },
+        plugins: [
+            new handlebars({
+                partialDirectory: "src/components", 
+            })
+        ]
     }
 );
