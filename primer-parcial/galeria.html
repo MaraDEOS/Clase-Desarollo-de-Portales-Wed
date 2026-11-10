@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+    <link rel="stylesheet" href="src/less/style.less" />
+
+</head>
+
+<body>
+    <section class="container">
+        <h1 style="text-align: center;">{{titulo}}</h1>
+        <section class="corkboard">
+            {{#each corkboard}}
+            {{>PhotoCard }}
+            {{/each}}
+        </section>
+    </section>
+</body>
+
+</html>

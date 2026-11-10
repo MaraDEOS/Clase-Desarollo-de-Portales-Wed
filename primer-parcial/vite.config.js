@@ -3,6 +3,8 @@ import path, { resolve } from 'node:path';
 import * as glob from "glob";
 import handlebars from 'vite-plugin-handlebars';
 
+import getPageContext from './src/data/index';
+
 const __dirname = import.meta.dirname;
 
 const base_path = import.meta.env?.BASE_URL ?? '';
@@ -34,9 +36,10 @@ export default defineConfig(
                 input: obtenerHtmlFiles()
             }
         },
-        plugins: [
+        plugins:[
             new handlebars({
-                partialDirectory: "src/components", 
+                partialDirectory: "src/components",
+                context: getPageContext,
             })
         ]
     }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas con HBS y variables en Data</title>
+    <link rel="stylesheet" href="src/less/deportes.less" />
+    
+</head>
+<body>
+    <div>
+        <h1>{{titulo}}</h1>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Deporte</th>
+                        <th>Descripción</th>
+                        <th>Qué se requiere</th>
+                        <th>Ranking</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each deportesList}}
+                        {{> DeporteRow}}
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
